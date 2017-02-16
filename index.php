@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="vista/js/jquery-3.1.0.min.js"></script>
     <script src="vista/js/angular.min.js" type="text/javascript"></script>
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyDYNxcMUp9_JcytlbJAJ-Lm_5Fot6GPytM"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyDYTQEDTTAMXS6ZguW9o2zfdFLzdgjS8VM"></script>
 <script src="https://code.angularjs.org/1.3.15/angular.js"></script>
 <script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"></script>
 <!--bootstrap-->
