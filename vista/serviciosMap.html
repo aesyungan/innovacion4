@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body>
+        <div>Maps </div>
+        
+         <div ng-app="myApp" ng-controller="customersCtrl"> 
+                
+                <table>
+                  <tr ng-repeat="x in names">
+                    <td>{{ x.latitud }}</td>
+                    <td>{{ x.longitud }}</td>
+                    <td>{{ x.descripcion }}</td>
+                  </tr>
+                </table>
+                
+                </div>
+                
+                <script>
+                var app = angular.module('myApp', []);
+                app.controller('customersCtrl', function($scope, $http) {
+                    $http.get("http://findme.webcindario.com/vista/usuario_dispositivo_listar.php")
+                    .then(function (response) {$scope.names = response.data.usuario_dispositivos;});
+                });
+                </script>
+    </body>
+</html>

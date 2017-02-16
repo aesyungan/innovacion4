@@ -1,0 +1,57 @@
+*{
+    color: white;
+}
+section{
+    height: 100%;
+}
+header{
+    background-color: #2196F3;
+    height: 80px;
+    padding: 1%;
+    color: #fff;
+
+}
+html,body {
+    height:94%;
+}
+/* Div que engloba el contenido de la página menos el footer */
+#wrapper {
+    min-height:100%;
+}
+body{
+    background-color: #494a4a;
+}
+a{
+    font-size: 16px;
+    color: #d0c9c9;
+}
+a:hover{
+    color: red;
+}
+a:visited{
+    background-color: mediumorchid;
+}
+footer {
+    position: relative;
+    /* Altura total del footer en px con valor negativo */
+    margin-top: -50px;
+    /* Altura del footer en px. Se han restado los 5px del margen
+       superior mas los 5px del margen inferior
+    */
+    height: 40px;
+    padding:5px 0px;
+    clear: both;
+    background: #286af0;
+    text-align: center;
+    color: #fff;
+}
+
+/* Esta clase define la anchura del contenido y la posicion centrada 
+   El contenido queda centrado y limitado, pero la cabecera y el pie
+   llegan hasta los limites del navegador.
+*/
+.define {
+    width:960px;
+    margin:0 auto;
+}
+
