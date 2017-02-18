@@ -1,7 +1,10 @@
 <?php
+require_once '../modelo/modelo_factura.php';
+require_once '../modelo/connect.php';
+
 class controlador_factura extends connect {
    public function ListarFactura() {
-        $consulta = "SELECT * FROM `Factura` ";
+        $consulta = "SELECT * FROM `Factura`";
         $res_consulta = $this->conectar($consulta);
         $res["success"] = 0;
         $res["messages"] = "Correcto...";
@@ -13,7 +16,7 @@ class controlador_factura extends connect {
             while ($dato = mysqli_fetch_array($res_consulta)) {
                 $item = array();
                 $item["num_factura"] = $dato["num_factura"];
-                $item["id_cliente"] = $dato["nombre"];
+                $item["id_cliente"] = $dato["id_cliente"];
                 $item["fecha"] = $dato["fecha"];
                 $item["num_pago"] = $dato["num_pago"];
                 
