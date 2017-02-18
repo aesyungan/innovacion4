@@ -18,7 +18,7 @@ class controlador_cliente extends connect {
             $res["clientes"] = array();
             while ($dato = mysqli_fetch_array($res_consulta)) {
                 $item = array();
-                $item["id_cliente"] = $dato["id_categoria"];
+                $item["id_cliente"] = $dato["id_cliente"];
                 $item["nombre"] = $dato["nombre"];
                 $item["apellido"] = $dato["apellido"];
                 $item["direccion"] = $dato["direccion"];
