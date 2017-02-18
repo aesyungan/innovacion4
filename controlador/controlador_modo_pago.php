@@ -34,6 +34,36 @@ class controlador_modo_pago extends connect {
             $res["messages"] = "Error no existe datos";
         }
         return json_encode($res);
-       
     }
+    //insertar
+
+    public function InsertarModoPago(modelo_modo_pago $item) {
+       
+
+        $consulta = "INSERT INTO `Modo_Pago`(`nombre`, `otros_detalles`) VALUES ('$item->nombre','$item->otros_detalles')";
+        $res_consulta = $this->conectar($consulta);
+        $res["success"] = 1;
+        $res["messages"] = "Correcto..";
+        return json_encode($res);
+    }
+    public function ActualizarModoPago(modelo_modo_pago $item) {
+       
+
+        $consulta = "UPDATE `Modo_Pago` SET `nombre`='$item->nombre',`otros_detalles`='$item->otros_detalles' WHERE `num_pago`=$item->num_pago";
+        $res_consulta = $this->conectar($consulta);
+        $res["success"] = 1;
+        $res["messages"] = "Correcto..";
+        return json_encode($res);
+    }
+    public function EliminarModoPago(modelo_modo_pago $item) {
+       
+
+        $consulta = "DELETE FROM `Modo_Pago`  WHERE `num_pago`=$item->num_pago";
+        $res_consulta = $this->conectar($consulta);
+        $res["success"] = 1;
+        $res["messages"] = "Correcto..";
+        return json_encode($res);
 }
+
+
+        }
