@@ -10,13 +10,13 @@ class controlador_producto extends connect {
         if (mysqli_num_rows($res_consulta) > 0) {
             $res["success"] = 1;
             $res["messages"] = "Correcto..";
-            $res["categorias"] = array();
+            $res["productos"] = array();
             while ($dato = mysqli_fetch_array($res_consulta)) {
                 $item = array();
                 $item["id_categoria"] = $dato["id_categoria"];
                 $item["nombre"] = $dato["nombre"];
                 $item["descripcion"] = $dato["descripcion"];
-                array_push($res["categorias"], $item);
+                array_push($res["productos"], $item);
             }
         } else {
             $res["success"] = 0;
