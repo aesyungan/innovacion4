@@ -57,15 +57,14 @@ class controlador_cliente extends connect {
         return json_encode($res);
     }
 
-    public function android_eliminar(modelo_cliente $item) {
-
-
+  public function EliminarClinete(modelo_cliente $item) {
         $consulta = "DELETE FROM `Cliente`  WHERE `id_cliente`=$item->id_cliente";
         $res_consulta = $this->conectar($consulta);
         $res["success"] = 1;
         $res["messages"] = "Correcto..";
         return json_encode($res);
     }
+
 
 }
 
