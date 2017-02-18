@@ -57,7 +57,7 @@ class controlador_cliente extends connect {
         return json_encode($res);
     }
 
-    public function android_eliminar(modelo_categoria $item) {
+    public function android_eliminar(modelo_cliente $item) {
 
 
         $consulta = "DELETE FROM `Cliente`  WHERE `id_cliente`=$item->id_cliente";
