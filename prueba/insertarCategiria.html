@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+       insetar
+        <form action="../services/s_categoria_ingresar.php" method="get" >
+            Nombre<input type="text" name="nombre" />
+            descripcion<input type="text" name="descripcion" />
+            <input type="submit" value="Enviar"/>
+            
+        </form><br>
+       Actualizar
+       <form action="../services/s_categoria_update.php" method="get" >
+            
+            id_categoria<input type="text" name="id_categoria" />
+            Nombre<input type="text" name="nombre" />
+            descripcion<input type="text" name="descripcion" />
+            <input type="submit" value="Enviar"/>
+            
+        </form>
+       Eliminar....
+       <form action="../services/s_categoria_eliminar.php" method="get" >
+            
+            id_categoria<input type="text" name="id_categoria" />
+            <input type="submit" value="Enviar"/>
+            
+        </form>
+    </body>
+</html>
