@@ -1,11 +1,11 @@
 <?php
+require_once '../modelo/connect.php';
 class controlador_detalle extends connect {
     //lsitar
     public function android_listar() {
         $consulta = "SELECT * FROM `Detalle` ";
         $res_consulta = $this->conectar($consulta);
-        $res["success"] = 0;
-        $res["messages"] = "Error no existe datos";
+      
         $res = array();
         if (mysqli_num_rows($res_consulta) > 0) {
             $res["success"] = 1;
@@ -20,6 +20,10 @@ class controlador_detalle extends connect {
                 $item["precio"] = $dato["descripcion"];
                 array_push($res["detalles"], $item);
             }
+        }else{
+              $res["success"] = 0;
+        $res["messages"] = "Error no existe datos";
+            
         }
         return json_encode($res);
     }

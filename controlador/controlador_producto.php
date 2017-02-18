@@ -1,11 +1,11 @@
 <?php
-
+require_once '../modelo/connect.php';
 class controlador_producto extends connect {
+    
    public function android_listar() {
         $consulta = "SELECT p.id_producto,p.nombre,p.precio,p.stock,p.format,p.content,c.id_categoria,c.nombre as categoria_nombre,c.descripcion FROM Producto as p INNER JOIN Categoria as c on c.id_categoria=p.id_categoria";
         $res_consulta = $this->conectar($consulta);
-        $res["success"] = 0;
-        $res["messages"] = "Correcto...";
+       
         $res = array();
         if (mysqli_num_rows($res_consulta) > 0) {
             $res["success"] = 1;
