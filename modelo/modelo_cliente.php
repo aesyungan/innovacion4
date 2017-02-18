@@ -1,6 +1,6 @@
 <?php
 class modelo_cliente{
-    public  $id_cliente;
+    public $id_cliente;
     public $nombre;
     public $apellido;
     public $cedula;
