@@ -1,6 +1,6 @@
 <?php
 
-require_once '../modelo/modelo_categoria.php';
+require_once '../modelo/modelo_cliente.php';
 require_once '../modelo/connect.php';
 
 class controlador_cliente extends connect {
@@ -21,6 +21,9 @@ class controlador_cliente extends connect {
                 $item["id_cliente"] = $dato["id_cliente"];
                 $item["nombre"] = $dato["nombre"];
                 $item["apellido"] = $dato["apellido"];
+                $item["cedula"] = $dato["cedula"];
+                $item["password"] = $dato["password"];
+                $item["bono"] = $dato["bono"];
                 $item["direccion"] = $dato["direccion"];
                 $item["fecha_nacimiento"] = $dato["fecha_nacimiento"];
                 $item["telefono"] = $dato["telefono"];
@@ -47,7 +50,7 @@ class controlador_cliente extends connect {
     public function modificar_cliente(modelo_cliente $item) {
 
 
-        $consulta = "UPDATE `Cliente` SET `nombre`='$item->nombre',`apellido`='$item->apellido',`direccion`='$item->direccion',`fecha_nacimiento`='$item->fecha_nacimiento',`foto`='$item->foto',`email`='$item->email',`nombre`='$item->nombre' WHERE `id_categoria`=$item->id_categoria";
+        $consulta = "UPDATE `Cliente` SET `nombre`='$item->nombre',`apellido`='$item->apellido',`cedula`='$item->cedula',`password`='$item->password',`bono`='$item->bono',`direccion`='$item->direccion',`fecha_nacimiento`='$item->fecha_nacimiento',`foto`='$item->foto',`email`='$item->email',`nombre`='$item->nombre' WHERE `id_cliente`=$item->id_cliente";
         $res_consulta = $this->conectar($consulta);
         $res["success"] = 1;
         $res["messages"] = "Correcto..";
