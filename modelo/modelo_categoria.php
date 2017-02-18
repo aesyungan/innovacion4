@@ -16,27 +16,27 @@ class modelo_categoria {
     private $id_categoria;
     private $nombre;
     private $descripcion;
-    function getId_categoria() {
+    public function getId_categoria() {
         return $this->id_categoria;
     }
 
-    function getNombre() {
+    public function getNombre() {
         return $this->nombre;
     }
 
-    function getDescripcion() {
+  public  function getDescripcion() {
         return $this->descripcion;
     }
 
-    function setId_categoria($id_categoria) {
+    public function setId_categoria($id_categoria) {
         $this->id_categoria = $id_categoria;
     }
 
-    function setNombre($nombre) {
+    public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
 
-    function setDescripcion($descripcion) {
+    public function setDescripcion($descripcion) {
         $this->descripcion = $descripcion;
     }
 
