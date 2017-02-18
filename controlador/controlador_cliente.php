@@ -64,7 +64,40 @@ class controlador_cliente extends connect {
         $res["messages"] = "Correcto..";
         return json_encode($res);
     }
-
-
+    
+ public function Logear(modelo_cliente $item) {
+  $consulta= "SELECT * FROM Cliente  WHERE cedula='$item->cedula' AND password='$item->password'";
+  $re_consulta=$this->conectar($consulta);
+ if (mysqli_num_rows($re_consulta) > 0) {
+            $res["success"] = 1;
+            $res["messages"] = "Correcto..";
+            $res["clientes"] = array();
+            while ($dato = mysqli_fetch_array($re_consulta)) {
+                $item = array();
+                $item["id_cliente"] = $dato["id_cliente"];
+                $item["nombre"] = $dato["nombre"];
+                $item["apellido"] = $dato["apellido"];
+                $item["cedula"] = $dato["cedula"];
+                $item["password"] = $dato["password"];
+                $item["bono"] = $dato["bono"];
+                $item["direccion"] = $dato["direccion"];
+                $item["fecha_nacimiento"] = $dato["fecha_nacimiento"];
+                $item["telefono"] = $dato["telefono"];
+                $item["email"] = $dato["email"];
+                 $item["foto"] = $dato["foto"];
+                array_push($res["clientes"], $item);
+            }
+        } else {
+            $res["success"] = 0;
+            $res["messages"] = "Error no existe datos";
+        }
+                 return json_encode($res);
+ 
 }
+
+
+
+    }
+
+
 
