@@ -1,8 +1,10 @@
 <?php
 class modelo_factura {
-    public $id_producto;
-    public $nombre;
-    public $precio;
+    public $num_factura;
+    public $id_cliente;
+    public $fecha;
+    public $num_pago;
+    
     
 }
 
