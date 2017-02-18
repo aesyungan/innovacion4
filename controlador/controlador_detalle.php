@@ -1,7 +1,5 @@
 <?php
-
 class controlador_detalle extends connect {
-
     //lsitar
     public function android_listar() {
         $consulta = "SELECT * FROM `Detalle` ";
@@ -25,9 +23,7 @@ class controlador_detalle extends connect {
         }
         return json_encode($res);
     }
-
     //insertar
-
     public function android_insertar(modelo_detalle $item) {
         $consulta = "INSERT INTO `Detalle`(`num_factura`, `id_producto`, `catidad`, `precio`) VALUES ('$item->num_factura','$item->id_producto','$item->catidad',$item->precio)";
         $res_consulta = $this->conectar($consulta);
