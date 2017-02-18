@@ -36,11 +36,8 @@ class controlador_cliente extends connect {
     }
 
     //insertar
-
-    public function insertar_cliente(modelo_cliente $item) {
-
-
-        $consulta = "INSERT INTO `Cliente`(`nombre`, `apellido`,`direccion`,`fecha_nacimiento`,`telefono`,`email`,`foto`) VALUES ('$item->nombre','$item->apellido','$item->direccion',,'$item->fecha_nacimiento',,'$item->telefono',,'$item->email',,'$item->foto')";
+       public function InsertarCliente(modelo_cliente $item) {
+        $consulta = "INSERT INTO `Cliente`(`nombre`, `apellido`,`cedula`, `password`,`bono`,`direccion`, `fecha_nacimiento`,`telefono`, `email`,`foto`) VALUES ('$item->nombre','$item->apellido','$item->cedula','$item->password','$item->bono','$item->direccion','$item->fecha_nacimiento','$item->telefono','$item->email','$item->foto')";
         $res_consulta = $this->conectar($consulta);
         $res["success"] = 1;
         $res["messages"] = "Correcto..";
