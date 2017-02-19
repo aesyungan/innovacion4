@@ -60,4 +60,34 @@ class controlador_producto extends connect {
         $res["messages"] = "Correcto..";
         return json_encode($res);
     }
+    
+        public function android_buscarID(modelo_producto $item) {
+       
+
+        $consulta = "select * FROM `Producto` WHERE id_producto=$item->id_producto";
+        $res_consulta = $this->conectar($consulta);
+       
+        $res = array();
+        if (mysqli_num_rows($res_consulta) > 0) {
+            $res["success"] = 1;
+            $res["messages"] = "Correcto..";
+            $res["productos"] = array();
+            while ($dato = mysqli_fetch_array($res_consulta)) {
+                $item = array();
+                $item["id_producto"] = $dato["id_producto"];
+                $item["nombre"] = $dato["nombre"];
+                $item["precio"] = $dato["precio"];
+                $item["stock"] = $dato["stock"];
+                $item["format"] = $dato["format"];
+                $item["content"] = $dato["content"];
+                $item["id_categoria"] = $dato["id_categoria"];
+              
+                array_push($res["productos"], $item);
+            }
+        } else {
+            $res["success"] = 0;
+            $res["messages"] = "Error no existe datos";
+        }
+        return json_encode($res);
+    }
 }
